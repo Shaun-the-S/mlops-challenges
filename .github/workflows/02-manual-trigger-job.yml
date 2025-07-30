@@ -15,5 +15,8 @@ jobs:
       uses: azure/login@v1
       with:
         creds: ${{secrets.AZURE_CREDENTIALS}}
-
+    - name: Submit AML job
+      run: |
+        az configure --defaults group=rg-dp100-l5c3faefaaeab4f58ab workspace=mlw-dp100-l5c3faefaaeab4f58ab
+        az ml job create --file src/job.yml
 
