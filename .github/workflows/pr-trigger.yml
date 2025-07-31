@@ -1,0 +1,11 @@
+name: PR Trigger Example
+
+on:
+  pull_request:
+
+jobs:
+  placeholder:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Placeholder
+        run: echo "Will add code checks here in next challenge"
