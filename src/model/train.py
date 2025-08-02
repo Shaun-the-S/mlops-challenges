@@ -20,7 +20,6 @@ def main(args):
     with mlflow.start_run():
         mlflow.sklearn.autolog()
 
-
     # read data
     df = get_csvs_df(args.training_data)
 
@@ -50,7 +49,6 @@ def split_data(df):
 
 
 def train_model(reg_rate, X_train, X_test, y_train, y_test):
-#    LogisticRegression(C=1/reg_rate, solver="liblinear").fit(X_train, y_train)
     model = LogisticRegression(C=1/reg_rate, solver="liblinear")
     model.fit(X_train, y_train)
     y_pred = model.predict(X_test)
@@ -76,6 +74,7 @@ def parse_args():
 
     # return args
     return args
+
 
 # run script
 if __name__ == "__main__":
