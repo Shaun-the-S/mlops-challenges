@@ -39,7 +39,7 @@ def get_csvs_df(path):
     return pd.concat((pd.read_csv(f) for f in csv_files), sort=False)
 
 
-# TO DO: add function to split data
+# TO DO: add function to split data.
 def split_data(df):
     X = df[['Pregnancies', 'PlasmaGlucose', 'DiastolicBloodPressure',
             'TricepsThickness', 'SerumInsulin', 'BMI',
