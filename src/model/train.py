@@ -11,13 +11,14 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, roc_auc_score
 import mlflow
 import mlflow.sklearn
-
+###
 # define functions
+
+
 def main(args):
     # TO DO: enable autologging
-  with mlflow.start_run():
-    mlflow.sklearn.autolog()
-
+    with mlflow.start_run():
+        mlflow.sklearn.autolog()
 
     # read data
     df = get_csvs_df(args.training_data)
@@ -38,27 +39,25 @@ def get_csvs_df(path):
     return pd.concat((pd.read_csv(f) for f in csv_files), sort=False)
 
 
-# TO DO: add function to split data
+# TO DO: add function to split data.
 def split_data(df):
-    X = df[['Pregnancies','PlasmaGlucose','DiastolicBloodPressure',
-            'TricepsThickness','SerumInsulin','BMI',
-            'DiabetesPedigree','Age']].values
+    X = df[['Pregnancies', 'PlasmaGlucose', 'DiastolicBloodPressure',
+            'TricepsThickness', 'SerumInsulin', 'BMI',
+            'DiabetesPedigree', 'Age']].values
     y = df['Diabetic'].values
     return train_test_split(X, y, test_size=0.2, random_state=42)
 
-def train_model(reg_rate, X_train, X_test, y_train, y_test):
-    # train model
-#    LogisticRegression(C=1/reg_rate, solver="liblinear").fit(X_train, y_train)
 
+def train_model(reg_rate, X_train, X_test, y_train, y_test):
     model = LogisticRegression(C=1/reg_rate, solver="liblinear")
     model.fit(X_train, y_train)
-    #=== 追加: テストデータで評価 ===#
     y_pred = model.predict(X_test)
     acc = accuracy_score(y_test, y_pred)
-    auc = roc_auc_score(y_test, model.predict_proba(X_test)[:,1])
+    auc = roc_auc_score(y_test, model.predict_proba(X_test)[:, 1])
 
     mlflow.log_metric("test_accuracy", acc)
     mlflow.log_metric("test_auc", auc)
+
 
 def parse_args():
     # setup arg parser
@@ -75,6 +74,7 @@ def parse_args():
 
     # return args
     return args
+
 
 # run script
 if __name__ == "__main__":
