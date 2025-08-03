@@ -5,5 +5,5 @@ model: azureml:diabetes-model:1
 instance_type: Standard_DS2_v2
 instance_count: 1
 environment:
-  name: sklearn-1.5
-  version: 29
+  name: diabetes-env
+  version: 3
