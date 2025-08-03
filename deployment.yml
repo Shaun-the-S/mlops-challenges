@@ -1,9 +1,9 @@
 $schema: https://azuremlschemas.azureedge.net/latest/managedOnlineDeployment.schema.json
-name: diabetes-deployment-alt5
+name: diabetes-deployment-alt6
 endpoint_name: diabetes-endpoint-alt3
 model: azureml:diabetes-model:1
 instance_type: Standard_DS2_v2
 instance_count: 1
 environment:
-  name: AzureML-sklearn-1.0-ubuntu20.04-py38-cpu
-  version: 57
+  name: diabetes-env:3
+  image: mcr.microsoft.com/azureml/sklearn-1.5-ubuntu20.04-py39-cpu-inference:latest
