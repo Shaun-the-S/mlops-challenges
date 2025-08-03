@@ -21,7 +21,7 @@ jobs:
 
       - name: Submit Azure ML Job (Dev)
         run: |
-          az ml job create --file src/job.yml --stream
+          az ml job create --file src/job.yml --resource-group rg-dp100-l5c3faefaaeab4f58ab --workspace-name mlw-dp100-l5c3faefaaeab4f58ab --stream
 
   production:
     name: Train on Production
