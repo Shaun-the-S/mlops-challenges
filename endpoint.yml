@@ -1,3 +1,3 @@
 $schema: https://azuremlschemas.azureedge.net/latest/managedOnlineEndpoint.schema.json
-name: diabetes-endpoint-alt2
+name: diabetes-endpoint-alt3
 auth_mode: key
