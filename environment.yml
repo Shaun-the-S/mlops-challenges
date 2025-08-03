@@ -1,4 +1,6 @@
 $schema: https://azuremlschemas.azureedge.net/latest/environment.schema.json
 name: diabetes-env
-version: 2
+version: 3
 image: mcr.microsoft.com/azureml/sklearn-1.0-ubuntu20.04-py38-cpu-inference:latest
+conda_file: conda.yml
+description: Environment for diabetes prediction model
