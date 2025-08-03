@@ -1,0 +1,22 @@
+name: Deploy ML model
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy-model:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Create endpoint
+        run: az ml online-endpoint create --file endpoint.yml
+
+      - name: Deploy model
+        run: az ml online-deployment create --file deployment.yml --all-traffic
