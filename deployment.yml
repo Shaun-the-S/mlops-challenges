@@ -5,5 +5,5 @@ model: azureml:diabetes-model:1
 instance_type: Standard_DS2_v2
 instance_count: 1
 environment:
-  name: AzureML-sklearn-1.5
-  version: 29
+  name: AzureML-sklearn-1.0-ubuntu20.04-py38-cpu
+  version: 57
