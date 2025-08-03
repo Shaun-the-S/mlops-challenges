@@ -1,10 +1,9 @@
 $schema: https://azuremlschemas.azureedge.net/latest/managedOnlineDeployment.schema.json
-name: diabetes-deployment-alt09
+name: diabetes-deployment-alt10
 endpoint_name: diabetes-endpoint-alt3
 model: azureml:diabetes-model:1
 instance_type: Standard_DS2_v2
 instance_count: 1
 environment:
-  conda_file: conda.yaml
   name: sklearn-1.5
   version: 29
