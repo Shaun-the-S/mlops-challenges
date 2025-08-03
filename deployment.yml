@@ -4,3 +4,6 @@ endpoint_name: diabetes-endpoint-alt3
 model: azureml:diabetes-model:1
 instance_type: Standard_DS2_v2
 instance_count: 1
+environment:
+  name: AzureML-sklearn-1.5
+  version: 29
