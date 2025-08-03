@@ -1,4 +1,4 @@
 $schema: https://azuremlschemas.azureedge.net/latest/environment.schema.json
 name: diabetes-env
-version: 1
-image: mcr.microsoft.com/azureml/sklearn-0.24-ubuntu18.04-py37-cpu-inference:latest
+version: 2
+image: mcr.microsoft.com/azureml/sklearn-1.0-ubuntu20.04-py38-cpu-inference:latest
