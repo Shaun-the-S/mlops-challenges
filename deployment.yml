@@ -1,5 +1,5 @@
 $schema: https://azuremlschemas.azureedge.net/latest/managedOnlineDeployment.schema.json
-name: diabetes-deployment-alt3
+name: diabetes-deployment-alt4
 endpoint_name: diabetes-endpoint-alt3
 model: azureml:diabetes-model:1
 instance_type: Standard_DS2_v2
