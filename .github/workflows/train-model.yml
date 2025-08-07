@@ -1,8 +1,8 @@
 name: Train Model on Azure ML
 
 on:
-#  push:
-  workflow_dispatch:
+  push:
+#  workflow_dispatch:
     branches:
       - main
 
